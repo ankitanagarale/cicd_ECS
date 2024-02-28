@@ -14,7 +14,7 @@ phases:
       - aws --version
       - echo $AWS_DEFAULT_REGION
       - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 581355710136.dkr.ecr.us-east-2.amazonaws.com
-      - REPOSITORY_URI=581355710136.dkr.ecr.us-east-2.amazonaws.com/demo-ecs
+      - REPOSITORY_URI=581355710136.dkr.ecr.us-east-2.amazonaws.com/canary-ecr
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
 
